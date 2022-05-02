@@ -23,20 +23,27 @@ const DisplayRecruiterSide = ({applicationjobs, changeStatus}) => {
         
 {name ? 
 <Fragment>
-    <tr>
-        <th>Бажана посада заявника</th>
-        <td>{name}</td>
-    </tr>
+    <hr/>
+<div class="job-post--title-wrapper">
+       <h1>
+        Бажана посада заявника:             
+       </h1>
+    </div>
+<div class="profile-page-section1">{name}</div>
 </Fragment>
 : 
 <Fragment> </Fragment>}
 
 {skills ? 
 <Fragment>
-    <tr>
-        <th>Навички заявника</th>
-        <td>{skills}</td>
-    </tr>
+<div class="job-post--title-wrapper">
+       <h1>
+       Навички заявника:      
+       </h1>
+    </div>
+<div class="profile-page-section1">{skills}</div>
+       
+   
 </Fragment>
 : 
 <Fragment> </Fragment>}
@@ -44,10 +51,12 @@ const DisplayRecruiterSide = ({applicationjobs, changeStatus}) => {
 
 {dateOfApplication ? 
 <Fragment>
-    <tr>
-        <th>Дата подачі заявки</th>
-        <td>{dateOfApplication}</td>
-    </tr>
+<div class="job-post--title-wrapper">
+       <h1>
+       Дата подачі заявки:     
+       </h1>
+    </div>
+<div class="profile-page-section1">{dateOfApplication}</div>   
 </Fragment>
 : 
 <Fragment> </Fragment>}
@@ -55,20 +64,24 @@ const DisplayRecruiterSide = ({applicationjobs, changeStatus}) => {
 
 {sop ? 
 <Fragment>
-    <tr>
-        <th>Повідомлення від кандидата</th>
-        <td>{sop}</td>
-    </tr>
+<div class="job-post--title-wrapper">
+       <h1>
+       Повідомлення від кандидата:    
+       </h1>
+    </div>
+<div class="profile-page-section1">{sop}</div> 
 </Fragment>
 : 
 <Fragment> </Fragment>}
 
 {status ? 
 <Fragment>
-    <tr>
-        <th>Статус заявки</th>
-        <td>{status}</td>
-    </tr>
+<div class="job-post--title-wrapper">
+       <h1>
+       Статус заявки    
+       </h1>
+    </div>
+<div class="profile-page-section1">{status}</div> 
 </Fragment>
 : 
 <Fragment> </Fragment>}

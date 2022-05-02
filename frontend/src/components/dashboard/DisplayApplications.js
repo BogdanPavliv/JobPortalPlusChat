@@ -19,20 +19,25 @@ const DisplayApplications = ({applicationjobs}) => {
         }) => <table className='table' key={_id}>
         {title ? 
 <Fragment>
-    <tr>
-        <th>Назва</th>
-        <td>{title}</td>
-    </tr>
+<hr/>
+     <div class="job-post--title-wrapper">
+       <h1>
+       Назва:             
+       </h1>
+    </div>
+   <div class="profile-page-section1">{title}</div>
 </Fragment>
 : 
 <Fragment> </Fragment>}
 
 {name ? 
 <Fragment>
-    <tr>
-        <th>Ім'я рекрутера</th>
-        <td>{name}</td>
-    </tr>
+<div class="job-post--title-wrapper">
+       <h1>
+       Ім'я рекрутера:             
+       </h1>
+    </div>
+   <div class="profile-page-section1">{name}</div>
 </Fragment>
 : 
 <Fragment> </Fragment>}
@@ -40,10 +45,12 @@ const DisplayApplications = ({applicationjobs}) => {
 
 {dateOfJoining ? 
 <Fragment>
-    <tr>
-        <th>Дата найму</th>
-        <td>{dateOfJoining}</td>
-    </tr>
+<div class="job-post--title-wrapper">
+       <h1>
+       Дата найму:             
+       </h1>
+    </div>
+   <div class="profile-page-section1">{dateOfJoining}</div>
 </Fragment>
 : 
 <Fragment> </Fragment>}
@@ -51,37 +58,43 @@ const DisplayApplications = ({applicationjobs}) => {
 
 {salary ? 
 <Fragment>
-    <tr>
-        <th>Зарплата</th>
-        <td>${salary}</td>
-    </tr>
+<div class="job-post--title-wrapper">
+       <h1>
+       Зарплата:             
+       </h1>
+    </div>
+   <div class="profile-page-section1">${salary}</div>
 </Fragment>
 : 
 <Fragment> </Fragment>}
 
 {typeOfJob ? 
 <Fragment>
-    <tr>
-        <th>Тип роботи</th>
-        <td>{typeOfJob}</td>
-    </tr>
+<div class="job-post--title-wrapper">
+       <h1>
+       Тип роботи:             
+       </h1>
+    </div>
+   <div class="profile-page-section1">{typeOfJob}</div>
 </Fragment>
 : 
 <Fragment> </Fragment>}
 
 {status ? 
 <Fragment>
-    <tr>
-        <th>Статус заявки</th>
-        <td>{status}</td>
-    </tr>
+<div class="job-post--title-wrapper">
+       <h1>
+       Статус заявки:             
+       </h1>
+    </div>
+   <div class="profile-page-section1">{status}</div>
 </Fragment>
 : 
 <Fragment> </Fragment>}
     
-<tr>
+<p class="text-danger">
 <input type="submit" className="btn btn-warning" value="Оцініть роботу" />
-    </tr>
+</p>
 
 </table>)
     return (

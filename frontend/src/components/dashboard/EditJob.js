@@ -44,22 +44,28 @@ const EditJob = ({match, jobs: {cjob, loading}, editJob, loadJobWithId}) => {
         <Fragment>
         <h1>Редагувати відомості про роботу</h1>
       <form onSubmit={e => onSubmit(e)}>
-        <div className="form-group">
-          <label for="id1">Кількість кандидатів</label>
-          <input type="number" className="form-control" placeholder="number of applications" name="applications" min='0' value={applications} onChange={e => onChange(e)} required />
+        <div className="form-group1">
+        <label class="col-sm-4 control-label" for="id1">Кількість кандидатів</label>
+           <div class="col-sm-8">
+          <input type="number" class="form-control" placeholder="number of applications" autofocus name="applications" min='0' value={applications} onChange={e => onChange(e)} required />
+          </div>
         </div>
 
-        <div className="form-group">
-        <label for="id1">Кількість позицій</label>
-          <input type="number" className="form-control" placeholder="number of positions" name="positions" min='0' value={positions} onChange={e => onChange(e)} required />
+        <div className="form-group1">
+        <label class="col-sm-4 control-label" for="id1">Кількість позицій</label>
+           <div class="col-sm-8">
+          <input type="number" class="form-control" placeholder="number of positions" autofocus name="positions" min='0' value={positions} onChange={e => onChange(e)} required />
+          </div>
         </div>
 
-        <div className="form-group">
-        <label for="id1">Дедлайн подачі заявок</label>
-          <input type="datetime-local" className="form-control" placeholder="deadline" name="deadline"  value={deadline} onChange={e => onChange(e)} required />
+        <div className="form-group1">
+        <label class="col-sm-4 control-label" for="id1">Дедлайн подачі заявок</label>
+          <div class="col-sm-8">
+          <input type="datetime-local" class="form-control" placeholder="deadline" autofocus name="deadline"  value={deadline} onChange={e => onChange(e)} required />
+          </div>
         </div>
 
-        <input type="submit" className="btn btn-primary" value="Редагувати вакансію" />
+        <input type="submit" class="btn btn-success js-send-btn js-publish-btn" name="post_job" value="Опублікувати вакансію" />
       </form>
         </Fragment>
     )

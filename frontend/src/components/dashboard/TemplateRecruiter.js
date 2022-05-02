@@ -5,6 +5,7 @@ import {deleteJob, editJob} from '../../actions/jobs';
 import moment from "moment";
 import {Link} from 'react-router-dom';
 // import deleteJob from '../../actions/jobs';
+import "../../static/style.css"
 
 
 const TemplateRecruiter = ({jobs, deleteJob, editJob}) => {
@@ -24,92 +25,98 @@ const TemplateRecruiter = ({jobs, deleteJob, editJob}) => {
         }) => <table className='table' key={_id}>
         {title ? 
 <Fragment>
-    <tr>
-        <th>Назва</th>
-        <td>{title}</td>
-    </tr>
+    
+     <div class="job-post--title-wrapper">
+       <h1>
+       {title}
+       <span class="public-salary-item"> ${salary}</span>
+       </h1>
+    </div>   
+    
+    
+    
 </Fragment>
 : 
 <Fragment> </Fragment>}
 {applications ? 
 <Fragment>
-    <tr>
-        <th>Кількість заявок</th>
-        <td>{applicationsapplied}</td>
-    </tr>
+<div class="page-header">
+<div class="list-jobs__details">
+        <a href="#" class="picture">
+            <div class="recruiter-images-container">
+                <div id class="userpic-wrapper userpic-color_0 userpic_sm ">
+                    <span class="userpic-initials"></span>
+                    <div class="userpic-image"></div>
+                </div>
+            </div>
+        </a>
+        <div class="list-jobs__details__info">
+        <li>Кількість заявок: {applicationsapplied} Залишилася кількість позицій: {positions - positionsfilled} Дата розміщення вакансії: {moment(date_of_posting).format('LLL')} Дедлайн подачі заявки: {moment(deadline).format('LLL')} Тип роботи: {typeOfJob} Тривалість: {duration}</li>
+        </div>           
+    </div>
+    </div>
+       
+        
+    
 </Fragment>
 : 
 <Fragment> </Fragment>}
 {positions ? 
 <Fragment>
-    <tr>
-        <th>Залишилася кількість позицій</th>
-        <td>{positions - positionsfilled}</td>
-    </tr>
+   
 </Fragment>
 : 
 <Fragment> </Fragment>}
 {date_of_posting ? 
     <Fragment>
-        <tr>
-            <th>Дата розміщення вакансії</th>
-            <td>{moment(date_of_posting).format('LLL')}</td>
-        </tr>
+        
     </Fragment>
     : 
     <Fragment> </Fragment>}
     
 {deadline ? 
 <Fragment>
-    <tr>
-        <th>Дедлайн подачі заявки</th>
-        <td>{moment(deadline).format('LLL')}</td>
-    </tr>
+    
 </Fragment>
 : 
 <Fragment> </Fragment>}
 {salary ? 
 <Fragment>
-    <tr>
-        <th>Зарплата</th>
-        <td>${salary}</td>
-    </tr>
+    
 </Fragment>
 : 
 <Fragment> </Fragment>}
 {skills ? 
 <Fragment>
-    <tr>
-        <th>Навички</th>
-        <td>{skills}</td>
-    </tr>
+   
+        <div class="profile-page-section">{skills}</div>
+   
+       
+    
 </Fragment>
 : 
 <Fragment> </Fragment>}
 
 {typeOfJob ? 
 <Fragment>
-    <tr>
-        <th>Тип роботи</th>
-        <td>{typeOfJob}</td>
-    </tr>
+    
 </Fragment>
 : 
 <Fragment> </Fragment>}
 {duration ? 
 <Fragment>
-    <tr>
-        <th>Тривалість</th>
-        <td>{duration}</td>
-    </tr>
+   
 </Fragment>
 : 
 <Fragment> </Fragment>}
-    <tr>
-    <td><Link to={`/viewapplication/${_id}`} className="btn btn-primary">Перегляд заявок</Link></td> 
-    <td><button className='btn btn-danger' onClick={() => {deleteJob(_id) }}>Видалити вакансію</button></td>
+    <p class="text-danger">
+    <Link to={`/viewapplication/${_id}`} className="btn btn-primary">Перегляд заявок</Link>
+    </p>
+    <p class="text-danger">
+    <button className='btn btn-danger' onClick={() => {deleteJob(_id) }}>Видалити вакансію</button>
     {/* <td><Link className='btn btn-primary' to={`/editjob/${_id}`} >Edit Job</Link></td> */}
-    </tr>
+    </p>
+    
     
 </table>)
     return (

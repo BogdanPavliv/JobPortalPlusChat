@@ -58,23 +58,31 @@ const EditProfile = ({updateProfile, auth, profile: {profile, loading}, getUserP
       <form onSubmit={e => onSubmit(e)}>
         
         <div className="form-group">
-        <label for="nameid">Посада</label>
+        <label class="col-sm-3 control-label" for="nameid">Посада</label>
+        <div class="col-sm-9">
           <input id="nameid" type="name" className="form-control" placeholder="*Name" name="name" value={name} onChange={e => onChange(e)} required/>
+          </div>
         </div>
         {auth.user.who === Applicant ? <Fragment>
           <div className="form-group">
-        <label for="skillid">Навички</label>
-          <input id="skillid" type="skills" className="form-control" placeholder="Skills" name="skills" value={skills} onChange={e => onChange(e)} />
+        <label class="col-sm-3 control-label" for="skillid">Навички</label>
+        <div class="col-sm-9">
+          <textarea rows="7" id="skillid" type="skills" className="form-control" placeholder="Skills" name="skills" value={skills} onChange={e => onChange(e)} />
+        </div>
         </div>  
         </Fragment>: 
         <Fragment>
           <div className="form-group">
-        <label for="contactid">Контактний номер</label>
+        <label class="col-sm-3 control-label" for="contactid">Номер телефону</label>
+        <div class="col-sm-9">
           <input id="contactid" type="number" className="form-control" placeholder="*Mobile Number" name="contactnumber" value={contactnumber} onChange={e => onChange(e)} required/>
+          </div>
         </div>
         <div class="form-group">
-      <label for="Textarea1">Біографія</label>
+      <label class="col-sm-3 control-label" for="Textarea1">Біографія</label>
+      <div class="col-sm-9">
       <textarea class="form-control" id="area1" rows="3" name="bio" value={bio} onChange={e => onChange(e)} required></textarea>
+      </div>
     </div>
         </Fragment>
         }

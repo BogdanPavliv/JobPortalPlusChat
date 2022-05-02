@@ -64,7 +64,7 @@ const AddEducation = ({auth: {loading, user}, addEducation}) => {
             value={to} min='1950' max='2021' onChange={e => onChange(e)}
             />
         </div>
-        <input type="submit" className="btn btn-primary my-1" />
+        <input type="submit" className="btn btn-primary my-1" value="Додати освіту"/>
       </form>
       {/* <Link  to='/profile'>Go Back</Link> */}
 

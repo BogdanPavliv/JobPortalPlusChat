@@ -6,6 +6,7 @@ import {Link} from 'react-router-dom';
 import moment from 'moment';
 import DisplayRecruiterSide from './DisplayRecruiterSide';
 import {getApplicationsById} from '../../actions/applications';
+import "../../static/style.css"
 
 
 const ViewJob = ({match, jobs: {cjob, loading}, editJob, loadJobWithId, applicationjobs, getApplicationsById}) => {
@@ -33,46 +34,37 @@ const ViewJob = ({match, jobs: {cjob, loading}, editJob, loadJobWithId, applicat
         <Fragment>
         <h1>Робота</h1>
         <table className='table'>
-    <tr>
-        <th>Назва</th>
-        <td>{title}</td>
-    </tr> 
-    <tr>
-        <th>Кількість заявок</th>
-        <td>{applications}</td>
-    </tr>
 
-    <tr>
-        <th>Кількість посад</th>
-        <td>{positions}</td>
-    </tr>
-        <tr>
-            <th>Дата розміщення</th>
-            <td>{moment(date_of_posting).format('LLL')}</td>
-        </tr>
-    <tr>
-        <th>Дедлайн подачі заявки</th>
-        <td>{moment(deadline).format('LLL')}</td>
-    </tr>
-    <tr>
-        <th>Зарплата</th>
-        <td>${salary}</td>
-    </tr>
-    <tr>
-        <th>Навички</th>
-        <td>{skills}</td>
-    </tr>
-    <tr>
-        <th>Тип роботи</th>
-        <td>{typeOfJob}</td>
-    </tr>
-    <tr>
-        <th>Тривалість</th>
-        <td>{duration}</td>
-    </tr>
-    <tr>
-    <td><Link className='btn btn-primary' to={`/editjob/${id}`} >Редагувати вакансію</Link></td>
-    </tr>
+    <div class="job-post--title-wrapper">
+       <h1>
+       {title}
+       <span class="public-salary-item"> ${salary}</span>
+       </h1>
+    </div>
+
+    <div class="page-header">
+<div class="list-jobs__details">
+        <a href="#" class="picture">
+            <div class="recruiter-images-container">
+                <div id class="userpic-wrapper userpic-color_0 userpic_sm ">
+                    <span class="userpic-initials"></span>
+                    <div class="userpic-image"></div>
+                </div>
+            </div>
+        </a>
+        <div class="list-jobs__details__info">
+        <li>Кількість заявок: {applications} Кількість посад: {positions} Дата розміщення: {moment(date_of_posting).format('LLL')} Дедлайн подачі заявки: {moment(deadline).format('LLL')} Тип роботи: {typeOfJob} Тривалість: {duration}</li>
+        </div>           
+    </div>
+    </div>
+
+
+    <div class="profile-page-section">{skills}</div>
+    
+    
+    <p class="text-danger">
+    <Link className='btn btn-default btn-xs' to={`/editjob/${id}`} >Редагувати вакансію</Link>
+    </p>   
     
 </table>
         <h2>Заявки на цю роботу</h2>

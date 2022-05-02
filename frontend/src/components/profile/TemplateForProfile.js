@@ -76,19 +76,29 @@ const TemplateForProfile = ({profile}) => {
             <Fragment> </Fragment>}
             {contactnumber ? 
             <Fragment>
-                <tr>
-                    <th>Номер телефону</th>
-                    <td>{contactnumber}</td>
-                </tr>
+                <div className="form-group">
+                <label class="col-sm-3 control-label" for="contactid">Номер телефону</label>
+                <div class="col-sm-9">
+                     <input type="text" name="name" id="name"
+                      className="form-control" 
+                      value={contactnumber} />                  
+                </div>
+                </div>
+               
             </Fragment>
             : 
             <Fragment> </Fragment>}
             {bio ? 
             <Fragment>
-                <tr>
-                    <th>Біографія</th>
-                    <td>{bio}</td>
-                </tr>
+                <div class="form-group">
+                <label class="col-sm-3 control-label" for="Textarea1">Біографія</label>
+                <div class="col-sm-9">
+                <textarea type="text" name="bio" id="area1" rows="12"
+                      className="form-control" 
+                      value={bio} />                    
+                </div>
+                </div>
+                
             </Fragment>
             : 
             <Fragment> </Fragment>}
@@ -97,7 +107,7 @@ const TemplateForProfile = ({profile}) => {
                 <div className="form-group">
                         <label class="col-sm-3 control-label" for="name">Навички</label>
                         <div class="col-sm-9">
-                            <input type="text" name="name" id="name"
+                            <textarea rows="7" type="text" name="name" id="name"
                              className="form-control" 
                              value={skills}/>
                              </div>

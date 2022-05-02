@@ -30,10 +30,13 @@ const AcceptedApplications = ({loading , applicationjobs, changeStatus, getAppli
         
 {name ? 
 <Fragment>
-    <tr>
-        <th>Бажана посада заявника</th>
-        <td>{name}</td>
-    </tr>
+     <hr/>
+     <div class="job-post--title-wrapper">
+       <h1>
+        Бажана посада заявника:             
+       </h1>
+    </div>
+   <div class="profile-page-section1">{name}</div>
 </Fragment>
 : 
 <Fragment> </Fragment>}
@@ -42,10 +45,12 @@ const AcceptedApplications = ({loading , applicationjobs, changeStatus, getAppli
 
 {dateOfJoining ? 
 <Fragment>
-    <tr>
-        <th>Дата приєднання</th>
-        <td>{dateOfJoining}</td>
-    </tr>
+   <div class="job-post--title-wrapper">
+       <h1>
+       Дата приєднання:             
+       </h1>
+    </div>
+   <div class="profile-page-section1">{dateOfJoining}</div>
 </Fragment>
 : 
 <Fragment> </Fragment>}
@@ -53,40 +58,45 @@ const AcceptedApplications = ({loading , applicationjobs, changeStatus, getAppli
 
 {typeOfJob ? 
 <Fragment>
-    <tr>
-        <th>Тип роботи</th>
-        <td>{typeOfJob}</td>
-    </tr>
+   <div class="job-post--title-wrapper">
+       <h1>
+       Тип роботи:             
+       </h1>
+    </div>
+   <div class="profile-page-section1">{typeOfJob}</div>
 </Fragment>
 : 
 <Fragment> </Fragment>}
 
 {title ? 
 <Fragment>
-    <tr>
-        <th>Назва роботи</th>
-        <td>{title}</td>
-    </tr>
+   <div class="job-post--title-wrapper">
+       <h1>
+       Назва роботи:             
+       </h1>
+    </div>
+   <div class="profile-page-section1">{title}</div>
 </Fragment>
 : 
 <Fragment> </Fragment>}
 
 {skills ? 
 <Fragment>
-    <tr>
-        <th>Навички кандидата</th>
-        <td>{skills}</td>
-    </tr>
+   <div class="job-post--title-wrapper">
+       <h1>
+       Навички кандидата:             
+       </h1>
+    </div>
+   <div class="profile-page-section1">{skills}</div>
 </Fragment>
 : 
 <Fragment> </Fragment>}
 
 
-<tr>
-    <td>
+        <p class="text-danger">
         <button type="submit" className='btn btn-warning'>Оцінити</button>
-    </td>
-    </tr>
+        </p>
+    
 
 </table>)
     return (
